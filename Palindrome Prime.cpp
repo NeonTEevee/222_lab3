@@ -38,12 +38,6 @@ int main ()
 		j = j*10;
 	}
 	
-	j = 1;
-	for(i=0; j<=p; i++)
-	{
-		j = j*10;
-	}
-	
 	temp = p;
 	while(temp>0)
 	{
@@ -69,8 +63,27 @@ int main ()
 			value[right+1]--;
 			p -= 2;
 		} else {
-			right++;
-			left--;
+			for(j=2; j<p; j++)
+			{
+				if(p%j == 0 && value[right] > 2)
+				{
+					value[right] -= 2;
+					p -= 2;
+					j = p;
+				}
+				if(p%j == 0 && value[right] < 2)
+				{
+					value[right] = 9;
+					value[right+1]--;
+					p -= 2;
+					j = p;
+				}
+			}
+			if(value[right] == value[left])
+			{
+				right++;
+				left--;
+			}
 		}
 	}
 	
