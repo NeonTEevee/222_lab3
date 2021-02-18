@@ -17,9 +17,7 @@ int main ()
 					return 0;
 				}
 				num = num/i;
-				printf("%d\n", num);
 				j = i;
-				printf("j = %d\n", j);
 				check++;
 				for(i=2; i<j; i++)
 				{
