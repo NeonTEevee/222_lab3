@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 int main ()
 {
@@ -55,18 +56,26 @@ int main ()
 	left = digit-1;
 	
 	check = 0;
-	while(check == 0)
+	for(i=0; check == 0; i++)
 	{
 		if(right>=left)
 			check = 1;
-		if(value[right] != value[left])
-		{
+		while(value[right] != value[left] && value[right] > value[left])
 			value[right] -= 2;
-			p -= 2;
+		if(value[right] != value[left] && value[right] < value[left])
+		{
+			value[left] -= 2;
+			value[right] = 9;
 		} else {
 			right++;
 			left--;
 		}
 	}
-	printf("%d", p);
+	
+	left = digit-1;
+	for(left=left; left>=0; left--)
+	{
+		printf("%d", value[left]);
+	}
+	return 0;
 }
