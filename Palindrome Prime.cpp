@@ -34,14 +34,12 @@ int main ()
 	{
 		temp = (p/j)%10;
 		value[i] = temp;
-		printf("Digit #%d = %d\n", i, value[i]);
 		j = j*10;
 	}
 	
 	j = 1;
 	for(i=0; j<=p; i++)
 	{
-		printf("Value[%d] = %d\n", i, value[i]);
 		j = j*10;
 	}
 	
@@ -52,8 +50,23 @@ int main ()
 		if(temp>0)
 			digit++;
 	}
-	printf("Digit = %d", digit);
 	
-	right = 1;
-	left = digit;
+	right = 0;
+	left = digit-1;
+	
+	check = 0;
+	while(check == 0)
+	{
+		if(right>=left)
+			check = 1;
+		if(value[right] != value[left])
+		{
+			value[right] -= 2;
+			p -= 2;
+		} else {
+			right++;
+			left--;
+		}
+	}
+	printf("%d", p);
 }
