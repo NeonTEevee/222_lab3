@@ -29,14 +29,17 @@ int main ()
 				}
 				i = 1;
 			}
+		} else {
+			printf("%d is not a Lucky Number.", temp);
+			return 0;
 		}
 	}
-	if(num != 1)
+	if(num == 1)
 	{
-		printf("%d is not a Lucky Number.", temp);
+		printf("%d is a Lucky Number.", temp);
 		return 0;
 	} else {
-		printf("%d is a Lucky Number.", temp);
+		printf("%d is not a Lucky Number.", temp);
 		return 0;
 	}
 }
