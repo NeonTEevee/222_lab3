@@ -64,8 +64,8 @@ int main ()
 			value[right] -= 2;
 		if(value[right] != value[left] && value[right] < value[left])
 		{
-			value[left] -= 2;
 			value[right] = 9;
+			value[right+1]--;
 		} else {
 			right++;
 			left--;
