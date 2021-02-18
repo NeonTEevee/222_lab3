@@ -62,20 +62,18 @@ int main ()
 			check = 1;
 		while(value[right] != value[left] && value[right] > value[left])
 			value[right] -= 2;
+			p -= 2;
 		if(value[right] != value[left] && value[right] < value[left])
 		{
 			value[right] = 9;
 			value[right+1]--;
+			p -= 2;
 		} else {
 			right++;
 			left--;
 		}
 	}
 	
-	left = digit-1;
-	for(left=left; left>=0; left--)
-	{
-		printf("%d", value[left]);
-	}
+	printf("%d", p);
 	return 0;
 }
